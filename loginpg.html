@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container" >
+    <h1></h1>
+    <div class="card">
+        <div class="inner-box" id="card">
+            <div class="card-front">
+                <h2>LOGIN</h2>
+                   <form method="post" name="google-sheet">
+                        <input type="email" class="input-box" name="email" placeholder="email" >
+                        <input type="password" class="input-box" name="password" placeholder="password" >
+                        <button type="submit" class="submit-btn" name="Submit"><a href="submit.html">submit</a></button>
+                        <input type="checkbox"><span>Remember me</span>
+                        <button type="button" class="btn" onclick="openRegister()">I'm New Here</button>
+                <a href="">Forgot password</a>
+                <a href="homepage.html">Back to Home</a>
+                 </div>
+                 <div class="card-back">
+                    <h2>REGISTER</h2>
+                        <input type="text" class="input-box" name="Name" placeholder="Your name" >
+                        <input type="email" class="input-box" name="Email" placeholder="Your email" >
+                        <input type="password" class="input-box"name="Password" placeholder="password" >
+                        <button type="submit" class="submit-btn" name="Submit">submit </button>
+                        <input type="checkbox"> <span>Remember me</span>
+                    </form>
+                <button type="button" class="btn" onclick="openLogin()">I've an account</button>
+                <a href="">Forgot password</a>
+                <a href="homepage.html">Back to Home</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var card = document.getElementById("card");
+
+        function openRegister(){
+            card.style.transform = "rotateY(-180deg)";
+        }
+        function openLogin(){
+            card.style.transform = "rotateY(0deg)";
+        }
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwVcqgdvpIRVA5MrIgbQR0iAPEUMtI_SOwYKqBkhMCS4mfLixZ2mO7oqudvvABeB2Qy/exec' 
+        const form = document.forms['google-sheet'] 
+        form.addEventListener('submit', e => {
+         e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! to get started login again"))
+        .catch(error => console.error('Error!', error.message)) });
+        
+    </script>
+</body>
+</html>

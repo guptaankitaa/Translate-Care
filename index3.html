@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hand Gesture Recognition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-3">
+        <a class="navbar-brand" href="#">Hospital Gesture Recognition</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#user-manual-modal" data-section="#user-manual-section">User Manual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#user-manual-modal" data-section="#supported-gestures-section">Supported Gestures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#user-manual-modal" data-section="#troubleshooting-section">Troubleshooting</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card shadow bg-light">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('video_feed33') }}" class="img-fluid">
+                           <h5 class="card-title mt-3 text-dark">Recognized Gesture <span class="badge badge-dark" id="gesture-name"></span></h5>
+                        <p class="card-text" id="gesture-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-secondary py-3 mt-5">
+  <div class="container">
+    <p class="text-center" style="color: white;">&copy; 2023</p>
+  </div>
+</footer>
+
+<!-- User Manual Modal -->
+<div class="modal fade" id="user-manual-modal" tabindex="-1" role="dialog" aria-labelledby="user-manual-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="user-manual-modal-label">User Manual</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- User Manual Section -->
+        <div id="user-manual-section">
+          <h4>Welcome to the Patient Hand Gesture Recognition Application!</h4>
+          <p>In this application, you can use your hand gestures to communicate with your family or healthcare provider, this application makes it easy to do so using natural hand movements.</p>
+          <h4>How to Use the Application</h4>
+          <p>Using the application is simple. Follow these steps to get started:</p>
+          <ol>
+            <li>Open the application on your computer or device.</li>
+            <li>Allow the application to access your camera.</li>
+            <li>Make a hand gesture in front of the camera.</li>
+            <li>The application will recognize the gesture and take the corresponding action.</li>
+          </ol>
+        </div>
+        <!-- Supported Gestures Section -->
+        <div id="supported-gestures-section" style="display:none">
+          <h4>Supported Gestures</h4>
+          <p>The following picture are gestures supported by the application:</p>
+            <img src="/templates/shc.jpg" alt="shc" class="img-fluid">
+        </div>
+        <!-- Troubleshooting Section -->
+        <div id="troubleshooting-section" style="display:none">
+          <h4>Troubleshooting</h4>
+          <p>If you are experiencing problems with the application, try the following:</p>
+          <ol>
+            <li>Make sure that the application has permission to access your camera.</li>
+           <li>Make sure that the lighting in the room is sufficient for the camera to capture the hand gestures clearly.</li>
+            <li>Try making the hand gestures slower and more exaggerated to ensure that they are clearly captured by the camera.</li>
+            <li>If you are still having problems, try restarting the application or refreshing the page.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Show the relevant modal section when a navbar button is clicked
+    $('.nav-link').click(function() {
+      var section = $(this).data('section');
+      $(section).siblings().hide();
+      $(section).show();
+    });
+
+  //   const outputLabelCounter = {{ output_label_counter }}
+  //   console.log(outputLabelCounter)
+  //   if (outputLabelCounter >= 50) {
+  //     alert("Message has been sent")
+  //   }
+  });
+  
+</script>
+
+</body>
+</html>

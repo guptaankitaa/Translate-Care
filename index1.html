@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hand Gesture Recognition</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.2.7/dist/tf.min.js"></script>
+    <script src="{{ url_for('static', filename='js/handpose.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <style type="text/css">
+
+body{
+ font-family: arial;
+ background: linear-gradient(0deg, #1e8ead  ,#1e8ead  ); 
+}
+  </style>
+  <body>
+    <div class="container">
+      <h1>Hand Gesture Recognition</h1>
+      <div class="video-container">
+        <video id="video" autoplay muted></video>
+        <img src="http://127.0.0.1:5000/handGesture_video_feed" />
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="result-container">
+        <h2>Result:</h2>
+        <p id="result"></p>
+      </div>
+    </div>
+  </body>
+</html>

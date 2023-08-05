@@ -1,0 +1,73 @@
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url(https://images.pexels.com/photos/7516363/pexels-photo-7516363.jpeg?cs=srgb&dl=p);
+    background-size: cover;
+       background-repeat: no-repeat;
+       top: 0px;
+       left: 0px;
+}
+
+/* heading  */
+.nav {
+    color: rgb(231, 230, 226);
+   /* background-color: rgb(255, 255, 255);
+    border: 2px solid red;
+    border-radius: 10px;
+   padding: 10px;*/
+ }
+
+
+
+
+/* targeting our main box  */
+ h1{
+       text-align: center;
+       font-size: 50px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 352px;
+    flex-direction: row;
+}
+
+#container1{
+    display: flex;
+    height: 78px;
+    width: 172px;
+   /* background-color: white;*/
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+   /* box-shadow: 2px 4px 2px 2px rgb(241, 157, 241);*/
+}
+
+#container2{
+    display: flex;
+    height: 78px;
+    width: 172px;
+    /*background-color: white;*/
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+   /* box-shadow: 2px 4px 2px 2px rgb(241, 157, 241);*/
+};
+
+
+#container3{
+    display: flex;
+    height: 78px;
+    width: 172px;
+   background-color:white;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+   /* box-shadow: 2px 4px 2px 2px rgb(241, 157, 241);*/
+};
+
+
