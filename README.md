@@ -36,41 +36,6 @@ The gestures I  trained are as given in the image below.
 
 ### 1. The first Step of building this project was of creating the folders for storing the training and testing data. As, in this project I have built my own dataset.
 
-``` python
-# Importing the Libraries Required
-
-import os
-import string
-
-# Creating the directory Structure
-
-if not os.path.exists("dataSet"):
-    os.makedirs("dataSet")
-
-if not os.path.exists("dataSet/trainingData"):
-    os.makedirs("dataSet/trainingData")
-
-if not os.path.exists("dataSet/testingData"):
-    os.makedirs("dataSet/testingData")
-
-# Making folder  0 (i.e blank) in the training and testing data folders respectively
-for i in range(0):
-    if not os.path.exists("dataSet/trainingData/" + str(i)):
-        os.makedirs("dataSet/trainingData/" + str(i))
-
-    if not os.path.exists("dataSet/testingData/" + str(i)):
-        os.makedirs("dataSet/testingData/" + str(i))
-
-# Making Folders from A to Z in the training and testing data folders respectively
-
-for i in string.ascii_uppercase:
-    if not os.path.exists("dataSet/trainingData/" + i):
-        os.makedirs("dataSet/trainingData/" + i)
-    
-    if not os.path.exists("dataSet/testingData/" + i):
-        os.makedirs("dataSet/testingData/" + i)
-```
-
 ### 2. The second step, after the folder creation is of creating the training and testing dataset.
 
 I captured each frame shown by the webcam of our machine. 
@@ -86,21 +51,6 @@ The image after applying gaussian blur looks like below.
 ![ROI](images/roi.png)
 
 ### The code for image proceesing is as following :
-
-```python
-import numpy as np
-import cv2
-minValue = 70
-def func(path):    
-    frame = cv2.imread(path)
-    
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    blur = cv2.GaussianBlur(gray,(5,5),2)
-
-    th3 = cv2.adaptiveThreshold(blur,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY_INV,11,2)
-    ret, res = cv2.threshold(th3, minValue, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    return res
-```
 
 ### 3. After the creation of the training and testing data. The third step is of creating a model for training. Here, I have used Convolutional Neural Network(CNN) for building this model. The model summary is as following 
 
