@@ -1,4 +1,4 @@
-1. 127.0.0.1:5000/handGesture
+ 127.0.0.1:5000/handGesture
 
 
 
