@@ -1,7 +1,5 @@
  127.0.0.1:5000/handGesture
 
-
-
 # Sign Language to Text Conversion
 
 ![Output Video](images/outputVideo_gif.gif)
